@@ -19,7 +19,7 @@ require 'json'
   downloaded by uncommenting the appropriate server.vm.box_url line below.
 
 =end
-json_path = ENV['DRUPAL_LAMP'].nil? ? ".drupal_lamp.json" : ENV['DRUPAL_LAMP']
+json_path = ".drupal_lamp.json"
 data = JSON.parse(File.read(json_path))
 
 Vagrant.configure("2") do |config|
@@ -27,7 +27,7 @@ Vagrant.configure("2") do |config|
     server.ssh.forward_agent = true
     server.vm.box = "precise64"
     #server.vm.box_url = "http://files.vagrantup.com/precise64_vmware_fusion.box"
-    #server.vm.box_url = "http://files.vagrantup.com/precise64.box"
+    server.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
     server.vm.provider "vmware_fusion" do |v|
       v.vmx["memsize"]  = "1024"
