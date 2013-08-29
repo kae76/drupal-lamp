@@ -17,19 +17,18 @@
   },
   "drupal": {
     "sites": {
-      "drupal": {
-        "deploy": false,
-        "clean": false,
+      "openatrium": {
+        "deploy": true,
+        "clean": true,
         "releases": 1,
         "files": "sites/default/files",
         "settings": "sites/default/settings.php",
         "repository": {
-          "uri": "http://git.drupal.org/project/drupal.git",
-          "revision": "7.x"
+          "uri": "https://github.com/waako/openatrium2.git",
+          "revision": "master"
         },
-        "profile": "standard",
+        "profile": "openatrium",
         "install": {
-          "install_configure_form.update_status_module": "'array(FALSE,FALSE)'",
           "--clean-url": 1
         }
       }
